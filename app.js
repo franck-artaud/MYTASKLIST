@@ -17,6 +17,7 @@ const form = document.querySelector('#course-form'),
       taskList = document.querySelector('.collection'),
       killList = document.querySelector('.supprimer-course'),
       taskContent = document.querySelector('#contenuTache');
+      filtering = document.querySelector('#filter');
 
 //Application
 
@@ -25,6 +26,15 @@ myTaskList()
 function myTaskList() {
     //Ajouter un événement
     form.addEventListener('submit', taskAdding);
+
+    //Supprimer un évenemment de la liste
+    taskList.addEventListener('click', killTask)
+
+    //Nettoyer toute la liste
+    killList.addEventListener('click', cleanList)
+
+     //Filtrer la liste
+    filtering.addEventListener('keyup', taskFilter)
 
 }
 
@@ -60,12 +70,37 @@ function taskAdding(e) {
 
     //vider le champ du formulaire
     taskContent.value = "";
-
-
-
-
-
-
     e.preventDefault()
 }
+
+    //Supprimer une tache
+    function killTask(e){
+        if (e.target.parentElement.classList.contains('delete-item')){
+            if(confirm('Attention !!! Tu souhaites vraiment suprimer cet élément de ta liste de course ?'))
+                e.target.parentElement.parentElement.remove();
+        }
+    }
+
+    //Nettoyer toute la liste
+    function cleanList(e) {
+        taskList.innerHTML="";
+    }
+
+    //  //Filtrer la liste
+     function taskFilter(e) {
+        const contentKeybord = e.target.value.toLowerCase()
+
+        document.querySelectorAll('.collection-item').forEach(
+            function(task) {
+                const keyWord = task.firstChild.textContent;
+
+                if(keyWord.toLowerCase().indexOf(contentKeybord) !=-1) {
+                task.getElementsByClassName.display = 'block'
+            } else {
+                task.style.display = 'none'
+            }
+        }
+            );
+        console.log(contentKeybord);
+    }
 
