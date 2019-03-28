@@ -40,7 +40,7 @@ body {
     background-position: center;
     background-size: cover;
     */
-    background: linear-gradient(to right, #5433ff, #20bdff, #a5fecb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, #da780a, #faea0a, #f34f1d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
  
     color: #333;
@@ -67,20 +67,21 @@ h3 {
     line-height: 52px;
     padding: 0 30px;
     font-size: 12px;
-    background-color: #b3d538;
+    background-color: #f33a0c;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .btn:hover {
-    background-color: #90b30f;
+    background-color: #ee8904;
 
 }
 
 .logo {
-    width: 50%;
+    width: 80%;
     height: auto;
     display: block;
-    margin: 30px auto;
+    margin: 5px auto;
 
 }
 
